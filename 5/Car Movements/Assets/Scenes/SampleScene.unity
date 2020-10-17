@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 223200504}
   - component: {fileID: 223200503}
   - component: {fileID: 223200502}
-  - component: {fileID: 223200507}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -149,16 +148,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223200501}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14146b22fc9e18b4ca4f25d08506c38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speedValue: 0
-  maxFrontSpeed: 15
-  maxRearSpeed: 7
-  accelerationValue: 0.5
-  rotationSpeed: 45
+  maxFrontSpeed: 10
+  maxRearSpeed: 4
+  accelerationValue: 0.25
+  rotationSpeed: 60
 --- !u!65 &223200503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -233,23 +232,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &223200507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223200501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0ed20724258e4e4497971168330d435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedValue: 0
-  maxFrontSpeed: 15
-  maxRearSpeed: 7
-  accelerationValue: 1
-  rotationSpeed: 45
 --- !u!1 &1156465807
 GameObject:
   m_ObjectHideFlags: 0
