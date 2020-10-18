@@ -57,7 +57,7 @@ public class mover: MonoBehaviour {
 	clip.name = clipName;
 	
     for (int i = framesCount; i-->0;) {
-      float t = Mathf.Lerp((float)startFuncTime,(float)endFuncTime, (float)i/framesCount);
+      float t = Mathf.Lerp(startFuncTime,endFuncTime, (float)i/framesCount);
       float angle = angleOffset * i;
       float scale = 2 / (3 - Mathf.Cos(2 * (angle + t * frequency)));
       keysX[i] = (new Keyframe(AnimationTime/framesCount*i, moveX(angle, scale, t)));
@@ -74,7 +74,9 @@ public class mover: MonoBehaviour {
   }
 
   void FixedUpdate() {
-
+    if (Input.GetKey(KeyCode.RightArrow)) {
+      anim.Play(clipName);
+    }
   }
   
   public void cubeAction(){
