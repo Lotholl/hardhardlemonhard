@@ -12,6 +12,8 @@ public class mover: MonoBehaviour {
   public static int framesCount = 25;
   public string clipName = "anim1";
   public static float AnimationTime = 3;
+  public static float startFuncTime =-5;
+  public static float endFuncTime =7;
   public static float lineLength = 2f;
   public static float lineScaleX = 5f;
   public static float lineScaleY = 5f;
@@ -55,7 +57,7 @@ public class mover: MonoBehaviour {
 	clip.name = clipName;
 	
     for (int i = framesCount; i-->0;) {
-      float t = Mathf.Lerp(0,AnimationTime, i/framesCount);
+      float t = Mathf.Lerp((float)startFuncTime,(float)endFuncTime, (float)i/framesCount);
       float angle = angleOffset * i;
       float scale = 2 / (3 - Mathf.Cos(2 * (angle + t * frequency)));
       keysX[i] = (new Keyframe(AnimationTime/framesCount*i, moveX(angle, scale, t)));
@@ -72,22 +74,6 @@ public class mover: MonoBehaviour {
   }
 
   void FixedUpdate() {
-
-    //manual
-    if (Input.GetKey(KeyCode.DownArrow)) {
-      for (int i = framesCount; i-->0;) {
-        float t = Time.time;
-        float angle = angleOffset * i;
-        float scale = 2 / (3 - Mathf.Cos(2 * (angle + t * frequency)));
-        transform.position = new Vector3(moveX(angle, scale, t), moveY(angle, scale, t), moveZ(angle, scale, t));
-      }
-    }
-
-    if (Input.GetKey(KeyCode.RightArrow)) {
-      // animate the GameObject
-      anim[clip.name].speed = 10f;
-      anim.Play(clipName);
-    }
 
   }
   
